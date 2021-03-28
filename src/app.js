@@ -8,6 +8,9 @@ const morgan = require('morgan');
 const cors = require('cors');
 const helmet = require('helmet');
 require('express-async-errors');
+// const multer = require('multer');
+// const GridFsStorage = require('multer-gridfs-storage');
+
 const { NOT_FOUND } = require('http-status-codes');
 
 const winston = require('./common/logging');
