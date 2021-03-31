@@ -181,6 +181,10 @@ paths:
                 password:
                   type: string
                   description: Password
+          image/png:
+            schema:
+              type: string
+              format: binary
       responses:
         200:
           description: Successful creation.

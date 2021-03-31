@@ -10,6 +10,7 @@ const DOC_PATH_REGEX = /^\/doc\/?$/;
 const DOC_PATH_RESOURCES_REGEX = /^\/doc\/.+$/;
 const WORDS_PATH_REGEX = /^\/words.*$/;
 const USERS_PATH = '/users';
+const USERS_PHOTO = '/users/photo';
 
 function isOpenPath(path) {
   return (
@@ -26,6 +27,9 @@ const checkAuthentication = (req, res, next) => {
   }
 
   if (req.path === USERS_PATH && req.method === 'POST') {
+    return next();
+  }
+  if (req.path === USERS_PHOTO) {
     return next();
   }
 
