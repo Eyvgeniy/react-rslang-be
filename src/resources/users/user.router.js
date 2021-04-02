@@ -24,12 +24,12 @@ router.post(
   [uploadFilesMiddleware, validator(user, 'body')],
   async (req, res) => {
     try {
-      await uploadFilesMiddleware(req, res);
       const userModel = {
         name: req.body.name,
         email: req.body.email,
         password: req.body.password
       };
+      await uploadFilesMiddleware(req, res);
       if (req.file && req.file.filename) {
         userModel.photoFileName = req.file.filename;
       }
